@@ -1,0 +1,7 @@
+<%= form_with model: restaurant do |r| %>
+  <%= r.text_field :name, placeholder: "Restarant Name"  %>
+  <%= r.text_field :address, placeholder: "Address"  %>
+  <%= r.number_field :phone_number, placeholder: "Phone Number" %>
+  <%= r.select :category, options_for_select(["Select here", "chinese", "italian", "japanese", "french", "belgian"]) %>
+  <%= r.submit %>
+<% end %>

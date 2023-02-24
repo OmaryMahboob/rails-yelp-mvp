@@ -1,0 +1,12 @@
+<%# <h1>test page</h1> %>
+<%# <%= render partial: "restaurant", locals: { restaurant: @restaurant } %>
+<%= render 'restaurant', restaurant: @restaurant %>
+
+<%= render 'reviews/new' %>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %> - Rating: <%= review.rating %></li>
+  <% end %>
+</ul>
+<%= link_to "Back to restaurants", restaurants_path %>
+<%= button_to "Destroy this restaurant", @restaurant, method: :Destroy %>
